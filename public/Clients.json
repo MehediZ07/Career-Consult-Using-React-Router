@@ -1,0 +1,103 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co.com/t2BLYvT/OIP.jpg",
+      "name": "Sophia Turner",
+      "profession": "Software Engineer",
+      "rating": 4.9,
+      "review": "The guidance I received was life-changing. The counselors were supportive and highly knowledgeable.",
+      "location": "New York, USA",
+      "feedbackDate": "2024-11-15"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co.com/rb2hHvm/download.jpg",
+      "name": "Liam Wilson",
+      "profession": "Marketing Manager",
+      "rating": 4.8,
+      "review": "The resume review service was outstanding. It helped me land my dream job!",
+      "location": "London, UK",
+      "feedbackDate": "2024-11-12"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co.com/Y34HncM/download.jpg",
+      "name": "Emma Clark",
+      "profession": "Graphic Designer",
+      "rating": 4.7,
+      "review": "The career counseling sessions gave me clarity and confidence to move forward.",
+      "location": "Toronto, Canada",
+      "feedbackDate": "2024-10-28"
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co.com/DbNM3B0/download.jpg",
+      "name": "Noah Johnson",
+      "profession": "Data Analyst",
+      "rating": 4.9,
+      "review": "Fantastic service! The interview coaching helped me ace my interviews.",
+      "location": "Sydney, Australia",
+      "feedbackDate": "2024-10-20"
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co.com/FBNtBNs/OIP.jpg",
+      "name": "Olivia Brown",
+      "profession": "Freelance Writer",
+      "rating": 4.6,
+      "review": "The LinkedIn optimization was a game changer. My profile is now more professional and attracts recruiters.",
+      "location": "San Francisco, USA",
+      "feedbackDate": "2024-10-10"
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co.com/nmK9qch/OIP.jpg",
+      "name": "James Martinez",
+      "profession": "Entrepreneur",
+      "rating": 4.8,
+      "review": "The team provided exceptional support for my career shift into a new industry.",
+      "location": "Barcelona, Spain",
+      "feedbackDate": "2024-09-25"
+    },
+    {
+      "id": 7,
+      "image": "https://i.ibb.co.com/nw7SZWn/OIP.jpg",
+      "name": "Isabella Davis",
+      "profession": "HR Specialist",
+      "rating": 4.7,
+      "review": "Their tools and resources helped me structure my career plan effectively.",
+      "location": "Berlin, Germany",
+      "feedbackDate": "2024-09-15"
+    },
+    {
+      "id": 8,
+      "image": "https://i.ibb.co.com/mvMkgvK/OIP.jpg",
+      "name": "William Garcia",
+      "profession": "Mechanical Engineer",
+      "rating": 4.9,
+      "review": "Highly recommend their mock interview services. It boosted my confidence significantly.",
+      "location": "Mumbai, India",
+      "feedbackDate": "2024-09-05"
+    },
+    {
+      "id": 9,
+      "image": "https://i.ibb.co.com/GWLSvMj/OIP.jpg",
+      "name": "Mia Thompson",
+      "profession": "Digital Marketer",
+      "rating": 4.8,
+      "review": "Their personalized career assessment was incredibly insightful.",
+      "location": "Dubai, UAE",
+      "feedbackDate": "2024-08-30"
+    },
+    {
+      "id": 10,
+      "image": "https://i.ibb.co.com/8rhyY61/OIP.jpg",
+      "name": "Ethan White",
+      "profession": "Civil Engineer",
+      "rating": 4.6,
+      "review": "The career workshops were engaging and highly informative.",
+      "location": "Singapore",
+      "feedbackDate": "2024-08-20"
+    }
+  ]
+  

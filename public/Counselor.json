@@ -1,0 +1,99 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "image": "https://i.ibb.co.com/WWGRCbB/focused-businessman-working-stockcake.jpg",
+      "degree": "M.A. in Career Counseling",
+      "profession": "Certified Career Coach",
+      "experience": "12 years",
+      "background": "John has worked with top universities and corporate organizations to guide individuals in achieving their career goals. He specializes in helping clients identify their strengths and align them with market opportunities.",
+      "expertise": "Career transitions, goal setting, and personal branding",
+      "contactEmail": "john.doe@careerwise.com",
+      "rating": 4.8,
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/johndoe",
+        "twitter": "https://twitter.com/johndoe"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "image": "https://i.ibb.co.com/hHDmww4/focused-professional-working-stockcake.jpg",
+      "degree": "B.A. in Human Resources Management",
+      "profession": "Resume Writing Specialist",
+      "experience": "8 years",
+      "background": "Jane has a strong background in recruitment and talent acquisition. She has reviewed thousands of resumes and knows exactly what hiring managers look for. Her strategies focus on creating ATS-friendly resumes.",
+      "expertise": "Resume optimization, job application strategies",
+      "contactEmail": "jane.smith@careerwise.com",
+      "rating": 4.7,
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/janesmith",
+        "instagram": "https://instagram.com/janesmith"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Emily Davis",
+      "image": "https://i.ibb.co.com/HTSVMn8/focused-professional-woman-stockcake.jpg",
+      "degree": "Ph.D. in Organizational Psychology",
+      "profession": "Career Workshop Facilitator",
+      "experience": "10 years",
+      "background": "Emily has facilitated career development workshops for professionals across industries. Her dynamic approach and interactive sessions have empowered individuals to enhance their career skills.",
+      "expertise": "Networking, interview preparation, confidence building",
+      "contactEmail": "emily.davis@careerwise.com",
+      "rating": 4.5,
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/emilydavis",
+        "facebook": "https://facebook.com/emilydavis"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Michael Brown",
+      "image": "https://i.ibb.co.com/Wn6Jvj9/joyful-business-professional-stockcake.jpg",
+      "degree": "MBA in Business Administration",
+      "profession": "Interview Coach",
+      "experience": "15 years",
+      "background": "Michael has held senior roles in HR and recruitment for Fortune 500 companies. He is an expert in conducting mock interviews and providing constructive feedback to help clients succeed.",
+      "expertise": "Mock interviews, executive presence, negotiation",
+      "contactEmail": "michael.brown@careerwise.com",
+      "rating": 4.9,
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/michaelbrown",
+        "twitter": "https://twitter.com/michaelbrown"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Sarah Wilson",
+      "image": "https://i.ibb.co.com/PW9K1Q8/focused-professional-break-stockcake.jpg",
+      "degree": "M.Sc. in Career Development",
+      "profession": "Career Assessment Specialist",
+      "experience": "9 years",
+      "background": "Sarah has a passion for helping individuals discover their ideal career paths. Using scientifically validated assessment tools, she provides clients with actionable insights for their professional growth.",
+      "expertise": "Career assessments, skill gap analysis, future career planning",
+      "contactEmail": "sarah.wilson@careerwise.com",
+      "rating": 4.6,
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/sarahwilson",
+        "instagram": "https://instagram.com/sarahwilson"
+      }
+    },
+    {
+      "id": 6,
+      "name": "David Lee",
+      "image": "https://images.stockcake.com/public/b/9/f/b9fadc07-b3e3-4ac4-a41c-e71314f54309_large/focused-professional-executive-stockcake.jpg",
+      "degree": "B.Sc. in Digital Marketing",
+      "profession": "LinkedIn Optimization Expert",
+      "experience": "7 years",
+      "background": "David has helped countless professionals and graduates boost their online presence through LinkedIn. He provides insights on how to create engaging profiles that attract recruiters and employers.",
+      "expertise": "LinkedIn optimization, personal branding, networking strategies",
+      "contactEmail": "david.lee@careerwise.com",
+      "rating": 4.8,
+      "socialLinks": {
+        "linkedin": "https://linkedin.com/in/davidlee",
+        "twitter": "https://twitter.com/davidlee"
+      }
+    }
+  ]
+  
