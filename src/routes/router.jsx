@@ -11,6 +11,7 @@ import ErrorPage from '../pages/ErrorPage'
 import Home from "../pages/Home";
 import ServiceDetails from "../components/ServiceDetails";
 import Blog from "../pages/Blog";
+import Statistics from "../pages/Statistics";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +28,9 @@ const router = createBrowserRouter([
       {
         path: "/statistics",
         element:    <PrivateRoute>
-        <FindUs></FindUs>
-     </PrivateRoute> ,  
+        <Statistics></Statistics>
+     </PrivateRoute> , 
+      loader: () => fetch("../Data.json"), 
       },
       {
         path: "/blog",

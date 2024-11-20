@@ -24,27 +24,50 @@ export default function Blog() {
                setLoading(false);
            });
    }, []);
+
+   const [expanded, setExpanded] = useState({});
+
+  const toggleReadMore = (id) => {
+    setExpanded((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
  
    if (loading) return <span className="loading loading-bars loading-lg"></span>;
   return (
-    <div className="max-w-4xl mx-auto p-4">
+    <div>
+         <div className='max-w-3xl mx-auto w-[90%]'>
+            <h1 className="mb-5 text-center mt-3 text-gray-500" > <span className='text-center text-[#fec1bf]    text-2xl rounded-lg w-fit mt-4 mx-auto font-semibold'>Explore our extensive collection of blogs,</span> crafted to inspire, educate, and guide you. From expert career advice and industry insights to practical tips and motivational stories, our blogs cover a wide range of topics designed to empower your journey!</h1>
+    
+            </div>
+
+            <div className="max-w-4xl mx-auto p-4">
     <div className="grid grid-cols-1 gap-6">
       {blog.map((post) => (
         <div
           key={post.id}
-          className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+          className="bg-white  border-2 solid border-gray-200 rounded-xl overflow-hidden "
         >
           <div className="p-4">
-            <h2 className="text-xl font-semibold text-gray-800">
+            <h2 className="text-xl font-semibold text-[#8fe1ce]">
               {post.title}
             </h2>
             <p className="text-sm text-gray-500 mt-2">
               Published on: {post.publishDate}
             </p>
             <p className="text-sm text-gray-500 mt-1">Author: {post.author}</p>
-            <p className="mt-4 text-gray-600 text-justify">
-              {post.body}
-            </p>
+            <p className="text-gray-700 leading-relaxed">
+            {expanded[post.id]
+              ? post.body // Show full text if expanded
+              : `${post.body.substring(0, 500)}...`} <button
+              className=" text-blue-500 font-medium hover:underline"
+              onClick={() => toggleReadMore(post.id)}
+            >
+              {expanded[post.id] ? "Show Less" : "Read More"}
+            </button>
+          </p>
+          
             <div className="mt-4">
             </div>
           </div>
@@ -52,5 +75,9 @@ export default function Blog() {
       ))}
     </div>
   </div>
+    </div>
+
   )
 }
+
+
