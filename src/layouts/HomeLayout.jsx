@@ -13,7 +13,6 @@ const HomeLayout = () => {
    <nav >
         <Navbar></Navbar>
       </nav>
- 
       <main className=" pt-5 ">
         <section className="">
           <Outlet></Outlet>

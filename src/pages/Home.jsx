@@ -6,15 +6,15 @@ import MuhammadYunus from '../assets/Muhammad-Yunus.webp'
 import BillGets from '../assets/Bill Gets.webp'
 import Obama from '../assets/obama.jpg'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper/modules"; // Import from 'swiper/modules'
+import { EffectCoverflow, Pagination } from "swiper/modules"; 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { register } from "swiper/element/bundle";
 import { useLoaderData } from 'react-router-dom';
-import CounselorCard from '../components/CounselorCard';
+
 import FreeSeminar from '../components/FreeSeminar';
-import Countdown from 'react-countdown';
+
 register();
 
 
@@ -53,7 +53,7 @@ export default function Home() {
   console.log(Counselors)
 
     useEffect(() => {
-        fetch('/Clients.json') // Correct path to access the file
+        fetch('/Clients.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch");
@@ -74,7 +74,7 @@ export default function Home() {
     if (loading) return <span className="loading loading-bars loading-lg"></span>;
 
     return ( 
-        <div>
+        <div className='overflow-hidden'>
             <div
   className="hero min-h-[30rem] -mt-4"
   style={{
@@ -193,17 +193,14 @@ export default function Home() {
 
             {data ? (
                 <section className="mx-auto">
-                    <div className='max-w-md mx-auto w-[90%]'>
+                    <div className='max-w-3xl mx-auto w-[90%]'>
             <h1 className='text-center text-[#fec1bf]  text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Our Happy Clients</h1>
             <p className="mb-5 text-center text-gray-500">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
+            We believe in delivering excellence, and nothing speaks louder than the feedback we receive from our valued clients. We take immense pride in helping individuals and businesses achieve their goals, and our clients' success is our top priority. Here’s what they have to say about their experience with us.
       </p>
             </div>
                     <HappyClients data={data} />
                 </section>
-
-
 
             ) : (
                 <span className="loading loading-bars loading-lg"></span>
@@ -211,7 +208,14 @@ export default function Home() {
 
                  {/* Free Seminar  */}
 
-                 <div>
+                 <div className='w-11/12 max-w-7xl mx-auto' >
+                 <div className='max-w-md mx-auto w-[90%]'>
+            <h1 className='text-center text-[#fec1bf]  text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Our Happy Clients</h1>
+            <p className="mb-5 text-center text-gray-500">
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+            </div>
               <FreeSeminar></FreeSeminar>
             </div>
             

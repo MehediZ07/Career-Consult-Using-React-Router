@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
+import { Link } from 'react-router-dom';
  // Import from 'swiper/modules'
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -34,9 +35,9 @@ export default function ServiceCard({card}) {
 {/* Short Description */}
 <p className="text-sm text-gray-600 ">
   {card.description.slice(0, 80)}...{" "}
-  <a href="#" className="text-blue-600 underline">
-    Learn More
-  </a>
+  <Link to={`/details/${card.id}`} className="text-primary">
+          Read More
+        </Link>
 </p>
     </div>
   </div>

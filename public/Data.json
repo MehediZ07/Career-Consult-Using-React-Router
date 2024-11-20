@@ -12,19 +12,22 @@
     "additionalInfo": "Includes a custom personal branding toolkit.",
     "learnMore": "/services/personal-branding-strategy"
   },
+ 
   {
     "id": 2,
-    "serviceName": "Job Search Accelerator",
-    "image": "https://i.ibb.co.com/LRDfHrX/1666170746890.jpg",
-    "category": "Online",
-    "description": "A targeted program designed to help you find job opportunities faster. This service includes strategies for networking, leveraging job boards, and customizing applications for specific roles.",
-    "price": "$60",
-    "duration": "08-12-24 2:00 PM - 3:30 PM",
-    "counselor": "Jane Smith",
-    "rating": 4.7,
-    "additionalInfo": "Includes templates for cover letters and follow-up emails.",
-    "learnMore": "/services/job-search-accelerator"
-  },
+    "serviceName": "Professional Networking Workshop",
+    "image": "https://i.ibb.co.com/vXJqbL7/getty-503489106-346197.jpg",
+    "category": "Group",
+    "description": "An interactive workshop teaching effective networking skills. Learn how to build genuine connections, expand your professional circle, and utilize platforms like LinkedIn to grow your network.",
+    "price": "$25 per participant",
+    "duration": "07-12-24 1:00 PM - 3:00 PM",
+    "counselor": "Michael Brown",
+    "rating": 4.6,
+    "additionalInfo": "Participants receive a list of active networking events.",
+    "learnMore": "/services/professional-networking-workshop"
+  }
+  
+  ,
   {
     "id": 3,
     "serviceName": "Career Transition Coaching",
@@ -38,21 +41,9 @@
     "additionalInfo": "Includes a personalized career transition roadmap.",
     "learnMore": "/services/career-transition-coaching"
   },
+  
   {
     "id": 4,
-    "serviceName": "Professional Networking Workshop",
-    "image": "https://i.ibb.co.com/vXJqbL7/getty-503489106-346197.jpg",
-    "category": "Group",
-    "description": "An interactive workshop teaching effective networking skills. Learn how to build genuine connections, expand your professional circle, and utilize platforms like LinkedIn to grow your network.",
-    "price": "$25 per participant",
-    "duration": "07-12-24 1:00 PM - 3:00 PM",
-    "counselor": "Michael Brown",
-    "rating": 4.6,
-    "additionalInfo": "Participants receive a list of active networking events.",
-    "learnMore": "/services/professional-networking-workshop"
-  },
-  {
-    "id": 5,
     "serviceName": "Skill Gap Analysis",
     "image": "https://i.ibb.co.com/87RGxY3/What-is-a-Skills-Gap-Analysis-How-to-Conduct-One-1.jpg",
     "category": "Offline",
@@ -65,7 +56,7 @@
     "learnMore": "/services/skill-gap-analysis"
   },
   {
-    "id": 6,
+    "id": 5,
     "serviceName": "Interview Coaching for Leadership Roles",
     "image": "https://i.ibb.co.com/G3VkCC3/a10.webp",
     "category": "Online",
@@ -76,5 +67,18 @@
     "rating": 4.9,
     "additionalInfo": "Includes a list of common executive-level interview questions.",
     "learnMore": "/services/interview-coaching-leadership"
+  },
+  {
+    "id": 6,
+    "serviceName": "Job Search Accelerator",
+    "image": "https://i.ibb.co.com/LRDfHrX/1666170746890.jpg",
+    "category": "Online",
+    "description": "A targeted program designed to help you find job opportunities faster. This service includes strategies for networking, leveraging job boards, and customizing applications for specific roles.",
+    "price": "$60",
+    "duration": "08-12-24 2:00 PM - 3:30 PM",
+    "counselor": "Jane Smith",
+    "rating": 4.7,
+    "additionalInfo": "Includes templates for cover letters and follow-up emails.",
+    "learnMore": "/services/job-search-accelerator"
   }
 ]

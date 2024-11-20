@@ -1,14 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
-import CategoryNews from "../pages/CategoryNews";
+
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import NewsDetails from "../pages/NewsDetails";
+import FindUs from "../components/FindUs"
 import PrivateRoute from "./PrivateRoute";
 // import ErrorPage from "../pages/ErrorPage";
 import ErrorPage from '../pages/ErrorPage'
 import Home from "../pages/Home";
+import ServiceDetails from "../components/ServiceDetails";
+import Blog from "../pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -22,25 +24,27 @@ const router = createBrowserRouter([
         loader: () => fetch("Counselor.json"),
         
       },
-      // {
-      //   path: "/category/:id",
-      //   element: <CategoryNews></CategoryNews>,
-      //   loader: ({ params }) =>
-      //     fetch(
-      //       `https://openapi.programming-hero.com/api/news/category/${params.id}`
-      //     ),
-      // },
+      {
+        path: "/statistics",
+        element:    <PrivateRoute>
+        <FindUs></FindUs>
+     </PrivateRoute> ,  
+      },
+      {
+        path: "/blog",
+        element:    <PrivateRoute>
+        <Blog></Blog>
+     </PrivateRoute>, 
+      },
     ],
   },
   {
-    path: "/news/:id",
+    path: "/details/:id",
     element: (
       <PrivateRoute>
-        <NewsDetails></NewsDetails>
+        <ServiceDetails></ServiceDetails>
       </PrivateRoute>
     ),
-    loader: ({ params }) =>
-      fetch(`https://openapi.programming-hero.com/api/news/${params.id}`),
   },
   {
     path: "auth",
