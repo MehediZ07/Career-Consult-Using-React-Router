@@ -13,6 +13,8 @@ import "swiper/css/pagination";
 import { register } from "swiper/element/bundle";
 import { useLoaderData } from 'react-router-dom';
 import CounselorCard from '../components/CounselorCard';
+import FreeSeminar from '../components/FreeSeminar';
+import Countdown from 'react-countdown';
 register();
 
 
@@ -187,6 +189,8 @@ export default function Home() {
            <OurServices></OurServices>
            </div>
 
+           
+
             {data ? (
                 <section className="mx-auto">
                     <div className='max-w-md mx-auto w-[90%]'>
@@ -198,11 +202,21 @@ export default function Home() {
             </div>
                     <HappyClients data={data} />
                 </section>
+
+
+
             ) : (
                 <span className="loading loading-bars loading-lg"></span>
             )}
+
+                 {/* Free Seminar  */}
+
+                 <div>
+              <FreeSeminar></FreeSeminar>
+            </div>
             
         </div>
+        
     );
 }
 
