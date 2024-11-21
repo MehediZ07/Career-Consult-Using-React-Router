@@ -58,7 +58,7 @@ export default function OurServices() {
     {data.map((card, index) => (
       <SwiperSlide
         key={index}
-        className="!w-[200px] !h-[200px] md:!w-[400px] md:!h-[400px] rounded-2xl border-[3px] solid border-gray-200 p-[.10rem]" 
+        className="!w-[250px] !h-[250px] md:!w-[400px] md:!h-[400px] rounded-2xl border-[3px] solid border-gray-200 p-[.10rem]" 
       >
      <ServiceCard card={card} ></ServiceCard>
       </SwiperSlide>

@@ -18,18 +18,18 @@ export default function ServiceCard({card}) {
       alt={card.serviceName}
       className="!w-full !h-full object-cover rounded-xl"
     />
-    <div className="card-body absolute bottom-0 pb-5 left-0 pl-5 w-full p-2  text-start backdrop-blur-sm py-2 bg-[#d5ebe6ad] rounded-b-lg ">
-    <h2 className="text-xl font-bold text-gray-600  w-fit p-1 rounded-xl">{card.serviceName}</h2>
+    <div className="card-body absolute bottom-0 md:pb-5 left-0 md:pl-5 w-full p-2  text-start backdrop-blur-sm py-2 bg-[#d5ebe6ad] rounded-b-lg ">
+    <h2 className="text-sm md:text-xl font-bold text-gray-600  w-fit p-1 rounded-xl">{card.serviceName}</h2>
 
-<p className="text-sm text-gray-600 ">
+<p className="text-xs md:text-sm text-gray-600 ">
   <span className="font-semibold">Category: </span>{card.category}
 </p>
 
-<p className="text-sm text-gray-600 ">
+<p className="text-xs md:text-sm text-gray-600 ">
   <span className="font-semibold">Pricing: </span>${card.price}
 </p>
 
-<p className="text-sm text-gray-600 ">
+<p className="text-xs md:text-sm text-gray-600 ">
   {card.description.slice(0, 80)}...{" "}
   <Link to={`/details/${card.id}`} className="text-primary">
           Read More

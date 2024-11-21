@@ -261,7 +261,7 @@ export default function ServiceDetails() {
 
           <div className="mt-4 flex items-center justify-between">
             <span className="text-sm text-gray-600">Counselor: {service.counselor}</span>
-              <button className="text-base px-2 py-1 -mb-12 rounded-full bg-[#a5e9da62] hover:bg-[#a5e9da7d] text-indigo-600 font-medium hover:font-semibold " onClick={handleGoBack}>Go Back</button>
+              <button className="text-base px-2 py-1 md:-mb-12 rounded-full bg-[#a5e9da62] hover:bg-[#a5e9da7d] text-indigo-600 font-medium hover:font-semibold " onClick={handleGoBack}>Go Back</button>
           </div>
 
           {service.additionalInfo && (
