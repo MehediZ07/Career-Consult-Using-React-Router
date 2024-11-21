@@ -12,6 +12,8 @@ import Home from "../pages/Home";
 import ServiceDetails from "../components/ServiceDetails";
 import Blog from "../pages/Blog";
 import Statistics from "../pages/Statistics";
+import MyProfile from "../pages/MyProfile";
+import ReserPass from "../pages/ReserPass";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
         <Blog></Blog>
      </PrivateRoute>, 
       },
+      {
+        path: "/profile",
+        element:    
+        <PrivateRoute>
+         <MyProfile></MyProfile>
+     </PrivateRoute>
+     , 
+      },
     ],
   },
   {
@@ -59,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/auth/resetpass",
+        element: <ReserPass></ReserPass>,
       },
     ],
   },

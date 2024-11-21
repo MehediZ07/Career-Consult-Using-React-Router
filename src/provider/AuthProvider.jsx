@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -44,6 +45,9 @@ const AuthProvider = ({ children }) => {
   const updateUserProfile = (updatedData) => {
     return updateProfile(auth.currentUser, updatedData);
   };
+  const handleForgotPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
 
   const authInfo = {
     user,
@@ -54,6 +58,7 @@ const AuthProvider = ({ children }) => {
     loading,
     updateUserProfile,
     handleGoogleLogin,
+    handleForgotPassword,
   };
 
   useEffect(() => {

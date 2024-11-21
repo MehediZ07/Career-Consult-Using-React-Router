@@ -29,9 +29,11 @@ export default function Statistics() {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="serviceName" />
-            <YAxis />
+            <YAxis 
+            domain={[3.25, 'dataMax']}
+            ticks={[ 3.5, 3.75, 4, 4.25, 4.5, 4.75, 4.75, 5]} />
             <Tooltip />
-            <Bar dataKey="rating" barSize={30} fill="#8884d8" />
+            <Bar dataKey="rating" barSize={30} fill="#faa2a0" />
           </BarChart>
         </ResponsiveContainer>
       </div>

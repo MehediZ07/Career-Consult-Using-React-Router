@@ -13,10 +13,28 @@ export default function ServiceDetails() {
   const { id } = useParams();
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [feedback, setFeedback] = useState('');
+  const [feedbackList, setFeedbackList] = useState([]);
+
+
+  // Feedback function 
+  const handleSubmit = (event) => {
+    event.preventDefault();  
+
+    if (feedback.trim() !== '') {
+      const currentDateTime = new Date().toLocaleString();  
+      const newFeedback = {
+        text: feedback,
+        timestamp: currentDateTime
+      };
+      setFeedbackList([ newFeedback, ...feedbackList]);
+      setFeedback('');  
+    }
+  };
 
   console.log(data)
   useEffect(() => {
-      fetch('/Data.json') // Correct path to access the file
+      fetch('/Data.json') 
           .then(response => {
               if (!response.ok) {
                   throw new Error("Failed to fetch");
@@ -36,7 +54,7 @@ export default function ServiceDetails() {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1); // Goes back one step in the history
+    navigate(-1); 
   };
 
   const { user, logOut } = useContext(AuthContext);
@@ -54,99 +72,77 @@ export default function ServiceDetails() {
       </button>
     </li>
     <li>
-      <NavLink
-        className="navlink ml-1"
-        to="/statistics"
-        style={({ isActive }) =>
-          isActive
-            ? {
-                fontWeight: "600",
-                color: pathname === "/" ? "#374151" : "#374151",
-      
-                backgroundColor: "#bbe6dd",
-              }
-            : {
-                fontWeight: "400",
-                backgroundColor: "#ffffffa0",
-                color: pathname === "/" ? "#374151" : "#374151",
-              }
-        }
+        <NavLink
+          className="navlink ml-1"
+          to="/statistics"
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  fontWeight: "600",
+                  color: pathname === "/" ? "#374151" : "#374151",
         
-      >
-        Statistics
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        className="navlink ml-1"
-        to="/dashboard"
-        style={({ isActive }) =>
-          isActive
-            ? {
-                fontWeight: "600",
-                color: pathname === "/" ? "#374151" : "#374151",
-             
-                backgroundColor: "#bbe6dd",
-              }
-            : {
-                fontWeight: "400",
-                backgroundColor: "#ffffffa0",
-                color: pathname === "/" ? "#374151" : "#374151",
-              }
-        }
-      >
-        Dashboard
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        className="navlink ml-1"
-        to="/Policy"
-        style={({ isActive }) =>
-          isActive
-            ? {
-                fontWeight: "600",
-                color: pathname === "/" ? "#374151" : "#374151",
-                
-                backgroundColor: "#bbe6dd",
-              }
-            : {
-                fontWeight: "400",
-                backgroundColor: "#ffffffa0",
-                color: pathname === "/" ? "#374151" : "#374151",
-              }
-        }
-      >
-        Policies
-      </NavLink>
-    </li>
-    <li>
-      <NavLink
-        className="navlink ml-1"
-        to="/login"
-        style={({ isActive }) =>
-          isActive
-            ? {
-                fontWeight: "600",
-                color: pathname === "/" ? "#374151" : "#374151",
-                
-                backgroundColor: "#bbe6dd",
-              }
-            : {
-                fontWeight: "400",
-                backgroundColor: "#ffffffa0",
-                color: pathname === "/" ? "#374151" : "#374151",
-              }
-        }
-      >
-        Login
-      </NavLink>
-    </li>
+                  backgroundColor: "#bbe6dd",
+                }
+              : {
+                  fontWeight: "400",
+                  backgroundColor: "#ffffffa0",
+                  color: pathname === "/" ? "#374151" : "#374151",
+                }
+          }
+          
+        >
+          Statistics
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navlink ml-1"
+          to="/blog"
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  fontWeight: "600",
+                  color: pathname === "/" ? "#374151" : "#374151",
+               
+                  backgroundColor: "#bbe6dd",
+                }
+              : {
+                  fontWeight: "400",
+                  backgroundColor: "#ffffffa0",
+                  color: pathname === "/" ? "#374151" : "#374151",
+                }
+          }
+        >
+          Blog
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className="navlink ml-1"
+          to="/profile"
+          style={({ isActive }) =>
+            isActive
+              ? {
+                  fontWeight: "600",
+                  color: pathname === "/" ? "#374151" : "#374151",
+                  
+                  backgroundColor: "#bbe6dd",
+                }
+              : {
+                  fontWeight: "400",
+                  backgroundColor: "#ffffffa0",
+                  color: pathname === "/" ? "#374151" : "#374151",
+                }
+          }
+        >
+          My profile
+        </NavLink>
+      </li>
   </>)
  
   if (loading) return <span className="loading loading-bars loading-lg"></span>;
 
-  // Parse the ID from URL and find the matching service
+ 
   const idInt = parseInt(id, 10);
   const service = data.find((item) => item.id === idInt);
 
@@ -186,9 +182,9 @@ export default function ServiceDetails() {
             {links}
           </ul>
     </div>
-    <Link to = "/"  className="btn btn-ghost bg-transparent hover:bg-transparent "><img 
+    <button   className="btn btn-ghost bg-transparent hover:bg-transparent "><img 
  style={{ animationDuration: '3s', animationDelay: '0s' , animationIterationCount: 'infinite',}}
-    className="h-12 w-16 pt-5 sm:pt-0  sm:w-36 animate__animated animate__flipInX" src={logoIcon} alt="" /></Link>
+    className="h-12 w-16 pt-5 sm:pt-0  sm:w-36 animate__animated animate__flipInX" src={logoIcon} alt="" /></button>
   </div>
  
    <div className="navbar-center hidden  lg:flex">
@@ -267,9 +263,45 @@ export default function ServiceDetails() {
             <div className="mt-3 text-xs text-gray-500 italic">{service.additionalInfo}</div>
           )}
         </div>
+        <div className="flex flex-col items-center p-4">
+      {/* Feedback  */}
+      <div className="w-full max-w-xl flex flex-col space-y-4 mb-6">
+        <div className="flex justify-center bg-white rounded-md items-center space-x-4 border-2 solid border-gray-300 w-fit mx-auto">
+   
+          <input
+            type="text"
+            value={feedback}
+            onChange={(e) => setFeedback(e.target.value)}
+            className="border-none p-2 rounded-md   focus:outline-none "
+            placeholder="Enter your feedback here"
+          />
+          <button
+            onClick={handleSubmit}
+            className="bg-[#a5e9da99]   text-gray-500 font-semibold py-2 px-4 rounded-md hover:bg-[#a5e9dad3]"
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </div>
-    <Footer></Footer>
+      </div>
+ 
+    </div>
+   
+ {/* Show Feedback */}
+{feedbackList.map((item, index) => (
+            <div key={index} className="text-start max-w-3xl w-[90%] border-2 border-gray-300 solid p-4 rounded-lg mx-auto mt-4  ">
+           <h1 className="font-semibold mb-1">{user.displayName}</h1>
+              <div className="text-sm text-gray-500 mb-4">{item.timestamp}</div>
+
+             
+              <p className="text-start whitespace-pre-wrap break-words text-gray-700">{item.text}</p>
+            </div>
+          ))}
+  <div className="mt-12">
+    
+  <Footer></Footer>
+  </div>
     </div>
   );
 }

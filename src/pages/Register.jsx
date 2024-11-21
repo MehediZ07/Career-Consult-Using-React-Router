@@ -8,7 +8,7 @@ const Register = () => {
   const [error, setError] = useState({});
   const handleSubmit = (e) => {
     e.preventDefault();
-    //get form data
+  
     const form = new FormData(e.target);
     const name = form.get("name");
     if (name.length < 5) {
@@ -24,7 +24,7 @@ const Register = () => {
         setUser(user);
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {
-            navigate("/");
+            navigate("/profile");
           })
           .catch((err) => {
             console.log(err);
@@ -36,8 +36,8 @@ const Register = () => {
       });
   };
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10">
+    <div className="min-h-screen flex  justify-center items-center mb-12">
+      <div className="card bg-white w-full max-w-lg shrink-0 rounded-none p-10 border-2 border-gray-200 solid">
         <h2 className="text-2xl font-semibold text-center">
           Register your account
         </h2>
@@ -95,16 +95,12 @@ const Register = () => {
               className="input input-bordered"
               required
             />
-            <label className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
+            
           </div>
           {error.register && <label className="label">{error.register}</label>}
 
           <div className="form-control mt-6">
-            <button className="btn btn-neutral rounded-none">Register</button>
+            <button className="btn bg-[#faa2a0] hover:bg-[#f99796] text-white rounded-none">Register</button>
           </div>
         </form>
         <p className="text-center font-semibold">

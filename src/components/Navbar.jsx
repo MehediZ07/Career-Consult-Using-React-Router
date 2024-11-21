@@ -82,7 +82,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className="navlink ml-1"
-          to="/Policy"
+          to="/profile"
           style={({ isActive }) =>
             isActive
               ? {
@@ -98,31 +98,10 @@ const Navbar = () => {
                 }
           }
         >
-          Policies
+          My profile
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className="navlink ml-1"
-          to="/login"
-          style={({ isActive }) =>
-            isActive
-              ? {
-                  fontWeight: "600",
-                  color: pathname === "/" ? "#374151" : "#374151",
-                  
-                  backgroundColor: "#bbe6dd",
-                }
-              : {
-                  fontWeight: "400",
-                  backgroundColor: "#ffffffa0",
-                  color: pathname === "/" ? "#374151" : "#374151",
-                }
-          }
-        >
-          Login
-        </NavLink>
-      </li>
+
     </>)
 
   return (
@@ -155,9 +134,9 @@ const Navbar = () => {
             {links}
           </ul>
     </div>
-    <Link to = "/"  className="btn btn-ghost bg-transparent hover:bg-transparent "><img 
+    <button  className="btn btn-ghost bg-transparent hover:bg-transparent "><img 
  style={{ animationDuration: '3s', animationDelay: '0s' , animationIterationCount: 'infinite',}}
-    className="h-12 w-16 pt-5 sm:pt-0  sm:w-36 animate__animated animate__flipInX" src={logoIcon} alt="" /></Link>
+    className="h-12 w-16 pt-5 sm:pt-0  sm:w-36 animate__animated animate__flipInX" src={logoIcon} alt="" /></button>
   </div>
  
    <div className="navbar-center hidden  lg:flex">

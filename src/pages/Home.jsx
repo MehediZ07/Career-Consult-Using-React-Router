@@ -47,10 +47,13 @@ export default function Home() {
     targetSectionRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-
   const Counselors = useLoaderData();
-
   console.log(Counselors)
+
+  const [showAll, setShowAll] = useState(false);
+
+
+  const counselorsData = showAll ? Counselors : Counselors.slice(0, 2);
 
     useEffect(() => {
         fetch('/Clients.json')
@@ -71,24 +74,23 @@ export default function Home() {
     }, []);
 
    
-    if (loading) return <span className="loading loading-bars loading-lg"></span>;
+    if (loading || !data || !Counselors || !counselorsData) return <span className="loading loading-bars loading-lg"></span>;
 
     return ( 
         <div className='overflow-hidden'>
             <div
-  className="hero min-h-[30rem] -mt-4"
+  className="hero min-h-[30rem]  "
   style={{
     backgroundImage: "url(https://i.ibb.co.com/4pnh766/DALL-E-2024-11-20-00-23-37-A-bustling-urban-cityscape-with-countless-people-rushing-in-all-direction.webp)",
   }}>
-  <div className="hero-overlay bg-opacity-60"> </div>
+  <div className="hero-overlay bg-opacity-60 backdrop-blur-sm"> </div>
   <div className="hero-content text-neutral-content text-center grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
     <div className="max-w-md lg:translate-x-16 mx-auto">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+      <h1 className="mb-5 text-5xl font-bold">We Believe In You</h1>
       <p className="mb-5">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      Do what you want to do, never get back step, be focused, set the career goal, never feel down, always be confident.
       </p>
-      <button onClick={handleScroll} className="btn bg-[#faa2a0] hover:bg-[#fc9a98]">Get Started</button>
+      <button onClick={handleScroll} className="btn text-white bg-[#fe9290] hover:bg-[#fc9a98]">Get Started</button>
     </div>
     <div className="-translate-x-44  lg:-translate-x-60 mx-auto py-10 overflow-hidden">
   <Swiper
@@ -137,14 +139,14 @@ export default function Home() {
 
 <div>
     <div className='max-w-3xl mx-auto w-[90%]'>
-            <h1 className='text-center text-[#aaebdc]   text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Meet Our Counselor</h1>
+            <h1 className='text-center text-[#aaebdc]   text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Meet Our Counselors</h1>
             <p className="mb-5 text-center text-gray-500">
             Our counselors are highly experienced, bringing extensive practical and professional expertise. They have guided countless individuals across various industries, helping them achieve their career goals with personalized strategies and actionable insights.
       </p>
             </div>
             <div className='grid grid-cols-1 gap-6 lg:grid-cols-2 w-11/12 max-w-7xl mx-auto mt-16'>
             {
-              Counselors.map((Counselor)=>(
+              counselorsData.map((Counselor)=>(
                 // <CounselorCard key={Counselor.id} Counselor={Counselor}>gdhcvx</CounselorCard>
        
                 <div key={Counselor.id} className="max-w-[35rem] h-[22rem] sm:h-72  mx-auto bg-base-100 shadow-xl flex  rounded-lg">
@@ -175,6 +177,12 @@ export default function Home() {
                 
               ))
             }
+             <button
+          onClick={() => setShowAll(!showAll)}
+          className="px-4 py-2 w-fit mx-auto col-span-1 lg:col-span-2 bg-[#faa2a0] text-white font-semibold rounded hover:bg-[#fe9593]"
+        >
+          {showAll ? "View Less" : "Meet All Consultant"}
+        </button>
             </div>
 </div>
 
@@ -187,9 +195,7 @@ export default function Home() {
       </p>
             </div>
            <OurServices></OurServices>
-           </div>
-
-           
+           </div>          
 
             {data ? (
                 <section className="mx-auto">
@@ -209,11 +215,10 @@ export default function Home() {
                  {/* Free Seminar  */}
 
                  <div className='w-11/12 max-w-7xl mx-auto' >
-                 <div className='max-w-md mx-auto w-[90%]'>
-            <h1 className='text-center text-[#fec1bf]  text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Our Happy Clients</h1>
+                 <div className='max-w-lg mx-auto w-[90%]'>
+            <h1 className='text-center text-[#fec1bf]  text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Free Seminar For You</h1>
             <p className="mb-5 text-center text-gray-500">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-        quasi. In deleniti eaque aut repudiandae et a id nisi.
+            Join with us, don't get late, there is limitation of available seat, so don't be late quickly complete your registration.
       </p>
             </div>
               <FreeSeminar></FreeSeminar>
