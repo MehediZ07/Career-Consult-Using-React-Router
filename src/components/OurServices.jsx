@@ -38,19 +38,7 @@ export default function OurServices() {
         <div>
             {data ?     
             (
-        //         <section className="mx-auto relative">
-        //             {
-        //   // eslint-disable-next-line react/prop-types
-        //   data.map((single) => {
-        //     return <ServiceCard  key={single.id} single={single} />;
-        //   })
-        // }
-                    
-        //         </section>
-
-
-
-
+  
 <div className="max-w-screen-lg mx-auto py-10">
   <Swiper
     effect={"coverflow"}

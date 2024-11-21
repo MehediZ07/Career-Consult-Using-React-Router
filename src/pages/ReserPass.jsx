@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { AuthContext } from '../provider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 
 export default function MyProfile() {
@@ -29,6 +30,10 @@ export default function MyProfile() {
       };
   return (
     <div className='min-h-[600px] mx-auto max-w-7xl w-[90%] flex items-center'>
+               <Helmet>
+        <title>{`Reset Pass | Career Consult`}</title>
+        <meta name="description" content="Description of your page" />
+      </Helmet>
         <div className='card bg-base-100 w-full mx-auto max-w-lg shrink-0 rounded-none p-10 border-2 border-gray-200 solid'>
     
      

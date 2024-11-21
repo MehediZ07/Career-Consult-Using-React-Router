@@ -14,6 +14,7 @@ import { register } from "swiper/element/bundle";
 import { useLoaderData } from 'react-router-dom';
 
 import FreeSeminar from '../components/FreeSeminar';
+import { Helmet } from 'react-helmet';
 
 register();
 
@@ -78,6 +79,10 @@ export default function Home() {
 
     return ( 
         <div className='overflow-hidden'>
+          <Helmet>
+        <title>{`Home | Career Consult`}</title>
+        <meta name="description" content="Description of your page" />
+      </Helmet>
             <div
   className="hero min-h-[30rem]  "
   style={{
@@ -137,7 +142,8 @@ export default function Home() {
 
            {/* Counsilor Section */}
 
-<div>
+{
+  counselorsData?(<div>
     <div className='max-w-3xl mx-auto w-[90%]'>
             <h1 className='text-center text-[#aaebdc]   text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Meet Our Counselors</h1>
             <p className="mb-5 text-center text-gray-500">
@@ -147,7 +153,7 @@ export default function Home() {
             <div className='grid grid-cols-1 gap-6 lg:grid-cols-2 w-11/12 max-w-7xl mx-auto mt-16'>
             {
               counselorsData.map((Counselor)=>(
-                // <CounselorCard key={Counselor.id} Counselor={Counselor}>gdhcvx</CounselorCard>
+           
        
                 <div key={Counselor.id} className="max-w-[35rem] h-[22rem] sm:h-72  mx-auto bg-base-100 shadow-xl flex  rounded-lg">
            
@@ -184,19 +190,28 @@ export default function Home() {
           {showAll ? "View Less" : "Meet All Consultant"}
         </button>
             </div>
-</div>
+</div>):(
+   <span className="loading loading-bars loading-lg"></span>
+)
+}
 
 {/* Our service  */}
-<div ref={targetSectionRef}>
-            <div className='max-w-3xl mx-auto w-[90%]'>
-            <h1 className='text-center text-[#aaebdc]  text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Our Services</h1>
-            <p className="mb-5 text-center text-gray-500">
-            Our counseling services are designed to provide personalized career guidance, practical advice, and strategic planning. Whether you're exploring career options, transitioning industries, or aiming to achieve specific professional goals, our expert counselors are here to support and empower you every step of the way.
-      </p>
-            </div>
-           <OurServices></OurServices>
-           </div>          
+{
+  data && counselorsData ?(<div ref={targetSectionRef}>
+    <div className='max-w-3xl mx-auto w-[90%]'>
+    <h1 className='text-center text-[#aaebdc]  text-2xl py-3 px-6 rounded-lg w-fit mt-10 mx-auto font-semibold'>Our Services</h1>
+    <p className="mb-5 text-center text-gray-500">
+    Our counseling services are designed to provide personalized career guidance, practical advice, and strategic planning. Whether you're exploring career options, transitioning industries, or aiming to achieve specific professional goals, our expert counselors are here to support and empower you every step of the way.
+</p>
+    </div>
+   <OurServices></OurServices>
+   </div>   ):(
+      <span className="loading loading-bars loading-lg"></span>
+   )
+}       
 
+
+{/* Happy clients  */}
             {data ? (
                 <section className="mx-auto">
                     <div className='max-w-3xl mx-auto w-[90%]'>

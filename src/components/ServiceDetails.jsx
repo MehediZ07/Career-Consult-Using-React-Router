@@ -8,6 +8,7 @@ import { useContext } from "react";
 import 'animate.css';
 import Headroom from "react-headroom";
 import Footer from "./Footer";
+import { Helmet } from "react-helmet";
 
 export default function ServiceDetails() {
   const { id } = useParams();
@@ -153,6 +154,10 @@ export default function ServiceDetails() {
 
   return (
     <div>
+             <Helmet>
+        <title>{`Service Details | Career Consult`}</title>
+        <meta name="description" content="Description of your page" />
+      </Helmet>
     <nav>
     <Headroom style={{ zIndex: 1000 }}>
       <div  className="bg-opacity-50 backdrop-blur-sm py-2 bg-transparent ">
@@ -256,7 +261,7 @@ export default function ServiceDetails() {
 
           <div className="mt-4 flex items-center justify-between">
             <span className="text-sm text-gray-600">Counselor: {service.counselor}</span>
-              <button className="text-sm px-2 py-1 -mb-12 rounded-full bg-[#a5e9da62] text-indigo-600 hover:font-medium " onClick={handleGoBack}>Go Back</button>
+              <button className="text-base px-2 py-1 -mb-12 rounded-full bg-[#a5e9da62] hover:bg-[#a5e9da7d] text-indigo-600 font-medium hover:font-semibold " onClick={handleGoBack}>Go Back</button>
           </div>
 
           {service.additionalInfo && (

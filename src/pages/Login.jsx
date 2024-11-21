@@ -4,6 +4,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const { userLogin, setUser, handleGoogleLogin,logOut } = useContext(AuthContext);
   const [error, setError] = useState({});
@@ -55,6 +56,10 @@ const togglePasswordVisibility = () => {
 };
   return (
     <div className="min-h-screen flex justify-center items-center mb-12">
+             <Helmet>
+        <title>{`Login | Career Consult`}</title>
+        <meta name="description" content="Description of your page" />
+      </Helmet>
       <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10 border-2 border-gray-200 solid">
         <h2 className="text-2xl font-semibold text-center">
           Login your account

@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
@@ -67,6 +68,10 @@ const Register = () => {
   };
   return (
     <div className="min-h-screen flex  justify-center items-center mb-12">
+             <Helmet>
+        <title>{`Register | Career Consult`}</title>
+        <meta name="description" content="Description of your page" />
+      </Helmet>
       <div className="card bg-white w-full max-w-lg shrink-0 rounded-none p-10 border-2 border-gray-200 solid">
         <h2 className="text-2xl font-semibold text-center">
           Register your account

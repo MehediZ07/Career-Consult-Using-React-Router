@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 
 
 export default function Blog() {
@@ -37,6 +38,10 @@ export default function Blog() {
    if (loading) return <span className="loading loading-bars loading-lg"></span>;
   return (
     <div>
+             <Helmet>
+        <title>{`Blog | Career Consult`}</title>
+        <meta name="description" content="Description of your page" />
+      </Helmet>
          <div className='max-w-3xl mx-auto w-[90%]'>
             <h1 className="mb-5 text-center mt-3 text-gray-500" > <span className='text-center text-[#fec1bf]    text-2xl rounded-lg w-fit mt-4 mx-auto font-semibold'>Explore our extensive collection of blogs,</span> crafted to inspire, educate, and guide you. From expert career advice and industry insights to practical tips and motivational stories, our blogs cover a wide range of topics designed to empower your journey!</h1>
     

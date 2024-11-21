@@ -1,4 +1,5 @@
 
+import { Helmet } from 'react-helmet';
 import { useLoaderData } from 'react-router-dom';
 import {
     Bar,
@@ -13,6 +14,10 @@ export default function Statistics() {
     const data = useLoaderData();
   return (
     <div>
+             <Helmet>
+        <title>{`Statistics | Career Consult`}</title>
+        <meta name="description" content="Description of your page" />
+      </Helmet>
      <div className='max-w-3xl mx-auto w-[90%]'>
             <h1 className='text-center text-[#aaebdc]   text-2xl  px-6 rounded-lg w-fit mt-4 mx-auto font-semibold'>See all the Services ratting comparison.</h1>
             <p className="mb-5 text-center mt-3 text-gray-500">
