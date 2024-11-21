@@ -1,11 +1,12 @@
 import { useContext, useState } from 'react'
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 export default function MyProfile() {
-    const { user, logOut } = useContext(AuthContext);
-    const { handleForgotPassword, updateUserProfile } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    const {  updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState({});
     const handleSubmit = (e) => {
@@ -15,26 +16,18 @@ export default function MyProfile() {
       const photo = form.get("photo");
       updateUserProfile({ displayName: name, photoURL: photo })
       .then(() => {
+        toast.success(`Registration Successful!`, {
+            position: "top-center",
+            autoClose: 2000,
+          });
         navigate("/profile");
+        e.target.reset();
       })
     };
 
-    const handleReset = (e) => {
-        e.preventDefault();
-        const form = new FormData(e.target);
-        const email = form.get("email");
-        handleForgotPassword(email)
-        .then(() => {
-            // Password reset email sent!
-            // ..
-          })
-          .catch((error) => {
-          console.log(error)
-            // ..
-          });
-      };
+ 
   return (
-    <div className='min-h-screen mx-auto max-w-7xl w-[90%]'>
+    <div className='min-h-[600px] mx-auto max-w-7xl w-[90%]'>
         <div className='card bg-base-100 w-full mx-auto max-w-lg shrink-0 rounded-none p-10'>
         <div className='flex items-center gap-4 px-8'>
            <div className='w-20 h-20 rounded-full'>
@@ -81,27 +74,11 @@ export default function MyProfile() {
           </div>
         </form>
         <div>
-        <form onSubmit={handleReset} className="card-body">
-          {/* email input  */}
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Email</span>
-            </label>
-            <input
-              name="email"
-              type="email"
-              placeholder="email"
-              className="input input-bordered"
-              required
-            />
-          </div>
-          <div className="form-control mt-6">
-            <button className="btn btn-neutral rounded-none">Reset Password</button>
-          </div>
-        </form>
+     
         </div>
      
         </div>
+        <ToastContainer />
     </div>
   )
 }

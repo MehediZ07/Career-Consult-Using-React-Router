@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react'
 import { AuthContext } from '../provider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 export default function MyProfile() {
@@ -16,6 +17,10 @@ export default function MyProfile() {
         handleForgotPassword(email)
         .then(() => {
             navigate("/auth/login");
+            toast.success(`Check your email`, {
+                position: "top-center",
+                autoClose: 2000,
+              });
           })
           .catch((error) => {
           console.log(error)
@@ -23,7 +28,7 @@ export default function MyProfile() {
           });
       };
   return (
-    <div className='min-h-[500px] mx-auto max-w-7xl w-[90%] flex items-center'>
+    <div className='min-h-[600px] mx-auto max-w-7xl w-[90%] flex items-center'>
         <div className='card bg-base-100 w-full mx-auto max-w-lg shrink-0 rounded-none p-10 border-2 border-gray-200 solid'>
     
      
@@ -54,6 +59,7 @@ export default function MyProfile() {
         </p>
         </div>
         </div>
+        <ToastContainer />
     </div>
   )
 }

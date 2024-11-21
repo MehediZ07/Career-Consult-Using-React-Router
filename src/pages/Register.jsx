@@ -1,9 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
   const { createNewUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const navigate = useNavigate();
   const [error, setError] = useState({});
   const handleSubmit = (e) => {
@@ -12,21 +16,44 @@ const Register = () => {
     const form = new FormData(e.target);
     const name = form.get("name");
     if (name.length < 5) {
+      toast.error("Follow the requerment!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
       setError({ ...error, name: "name should be more then 5 character" });
+      return;
     }
     const email = form.get("email");
     const photo = form.get("photo");
     const password = form.get("password");
-
+    const passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.{6,})/;
+    if (!passwordValidation.test(password)) {
+      toast.error("Follow the requerment!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
+      setError({
+        ...error, password: 'Password must be at least 6 characters long, contain at least one uppercase letter, and one lowercase letter.',
+      });
+      return;
+    }
     createNewUser(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {
+            toast.success(`Registration Successful!`, {
+              position: "top-center",
+              autoClose: 2000,
+            });
             navigate("/profile");
           })
           .catch((err) => {
+            toast.error("Enter valid email and password!", {
+              position: "top-center",
+              autoClose: 2000,
+            });
             console.log(err);
           });
       })
@@ -34,6 +61,9 @@ const Register = () => {
         console.log(err);
         // ..
       });
+  };
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible((prevState) => !prevState);
   };
   return (
     <div className="min-h-screen flex  justify-center items-center mb-12">
@@ -55,7 +85,7 @@ const Register = () => {
             />
           </div>
           {error.name && (
-            <label className="label text-sx text-red-500">{error.name}</label>
+            <label className="label text-xs text-red-500">{error.name}</label>
           )}
 
           <div className="form-control">
@@ -84,20 +114,31 @@ const Register = () => {
             />
           </div>
 
-          <div className="form-control">
+          <div className="form-control relative">
             <label className="label">
               <span className="label-text">Password</span>
             </label>
             <input
               name="password"
-              type="password"
+              type={isPasswordVisible ? 'text' : 'password'}
               placeholder="password"
               className="input input-bordered"
               required
             />
+             <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute  top-[3.25rem] right-4 text-gray-500"
+              style={{ border: 'none', background: 'transparent' }}
+            >
+              {isPasswordVisible ? <FaRegEyeSlash />  : <FaRegEye />}
+            </button>
             
           </div>
-          {error.register && <label className="label">{error.register}</label>}
+          {error.password && (
+            <label className="label text-xs text-red-500">{error.password }</label>
+          )}
+          
 
           <div className="form-control mt-6">
             <button className="btn bg-[#faa2a0] hover:bg-[#f99796] text-white rounded-none">Register</button>
@@ -110,6 +151,7 @@ const Register = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer />
     </div>
   );
 };
