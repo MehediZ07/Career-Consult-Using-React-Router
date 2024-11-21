@@ -24,12 +24,14 @@ Career Counseling Website designed to guide users on their career paths. The goa
 
 [Requirement Document Link](https://docs.google.com/document/d/1ErVVKPWEMzrmOn4bp18Vba0nfUpK-KZpqcTvSNffLKU/edit?tab=t.0).
 
-## Live Link Firebase deploy
 
-[Career Consult Web App](https://mz-career-consult.surge.sh/).
+## Live Link Firebase deploy
+[Career Consult Web App](https://career-consult.web.app/).
+
 
 ## Live Link Surge deploy
-[Career Consult Web App](https://career-consult.web.app/).
+[Career Consult Web App](https://mz-career-consult.surge.sh/).
+
 
 ### Preview
 
