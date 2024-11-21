@@ -13,7 +13,6 @@ export default function OurServices() {
     const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
 
-    console.log(data)
     useEffect(() => {
         fetch('/Data.json') // Correct path to access the file
             .then(response => {
@@ -26,8 +25,8 @@ export default function OurServices() {
                 setData(json);
                 setLoading(false);
             })
+            // eslint-disable-next-line no-unused-vars
             .catch(err => {
-                console.error("Error fetching data:", err);
                 setLoading(false);
             });
     }, []);
@@ -66,13 +65,9 @@ export default function OurServices() {
     ))}
   </Swiper>
 </div>
-
-
-
             ) : (
                 <span className="loading loading-bars loading-lg"></span>
-            )}
-          
+            )} 
         </div>
     );
 }

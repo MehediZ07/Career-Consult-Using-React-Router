@@ -2,14 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet';
 
-
 export default function Blog() {
-
-
    const [blog, setBlog] = useState({});
    const [loading, setLoading] = useState(true);
    useEffect(() => {
-       fetch('/Blog.json') // Correct path to access the file
+       fetch('/Blog.json') 
            .then(response => {
                if (!response.ok) {
                    throw new Error("Failed to fetch");
@@ -20,8 +17,9 @@ export default function Blog() {
                setBlog(json);
                setLoading(false);
            })
+           // eslint-disable-next-line no-unused-vars
            .catch(err => {
-               console.error("Error fetching data:", err);
+           
                setLoading(false);
            });
    }, []);
@@ -64,7 +62,7 @@ export default function Blog() {
             <p className="text-sm text-gray-500 mt-1">Author: {post.author}</p>
             <p className="text-gray-700 leading-relaxed">
             {expanded[post.id]
-              ? post.body // Show full text if expanded
+              ? post.body 
               : `${post.body.substring(0, 500)}...`} <button
               className=" text-blue-500 font-medium hover:underline"
               onClick={() => toggleReadMore(post.id)}

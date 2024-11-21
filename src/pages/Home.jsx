@@ -49,7 +49,7 @@ export default function Home() {
   };
 
   const Counselors = useLoaderData();
-  console.log(Counselors)
+
 
   const [showAll, setShowAll] = useState(false);
 
@@ -68,8 +68,9 @@ export default function Home() {
                 setData(json);
                 setLoading(false);
             })
+            // eslint-disable-next-line no-unused-vars
             .catch(err => {
-                console.error("Error fetching data:", err);
+             
                 setLoading(false);
             });
     }, []);

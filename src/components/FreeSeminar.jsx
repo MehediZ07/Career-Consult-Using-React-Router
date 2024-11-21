@@ -27,9 +27,9 @@ const [coundown, setCoundown] = useState(true)
             position: "top-center",
             autoClose: 2000,
           });
-          setFormData({ name: name, phone: phone }); // Reset form fields
+          setFormData({ name: name, phone: phone }); 
           e.target.reset();
-          setCoundown(false) // Reset form inputs
+          setCoundown(false) 
         } else {
           toast.error("Please fill out all fields!", {
             position: "top-center",
@@ -43,7 +43,7 @@ const [coundown, setCoundown] = useState(true)
   return (
     <div className="flex items-center justify-center  bg-transparent mb-12">
     <div className="bg-white border-[3px] solid border-gray-200 max-w-3xl w-full rounded-xl  flex flex-col md:flex-row">
-      {/* Left Section */}
+
       <div className="flex-1 flex items-center justify-center p-8  bg-[#bbe6dd]  bg-opacity-50 text-[#faa2a0] rounded-t-lg md:rounded-t-none  md:rounded-l-lg">
 <div>
             <h1 className="text-3xl text-gray-500 md:text-4xl font-bold text-center mb-8">
@@ -55,17 +55,10 @@ const [coundown, setCoundown] = useState(true)
             <p className="text-xl text-gray-500 font-semibold mt-4">{formData.name}</p>
             </div>
         }
-
 </div>
-
       </div>
-
-      {/* Divider */}
-      {/* <div className="w-px bg-gray-300"></div> */}
-
-      {/* Right Section */}
       <div className="flex-1 p-8">
-      <form onSubmit={handleFormSubmit} className="space-y-4"> {/* Use <form> instead of <div> */}
+      <form onSubmit={handleFormSubmit} className="space-y-4"> 
         <div>
           <label
             htmlFor="name"
@@ -77,13 +70,10 @@ const [coundown, setCoundown] = useState(true)
             type="text"
             id="name"
             name="name"
-            // value={formData.name}
-            
             placeholder="Enter your name"
             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#bbe6dd]"
           />
         </div>
-
         <div>
           <label
             htmlFor="phone"
@@ -109,11 +99,8 @@ const [coundown, setCoundown] = useState(true)
           Submit
         </button>
       </form>
+    </div> 
     </div>
-  
-    </div>
-
-    {/* Toast Notifications */}
     <ToastContainer />
   </div>
   )

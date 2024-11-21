@@ -13,13 +13,12 @@ const Login = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const googleProvider = new GoogleAuthProvider();
 
-  // console.log(location);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log({ email, password });
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
@@ -30,6 +29,7 @@ const Login = () => {
         });
         navigate(location?.state ? location.state : "/profile");
       })
+      // eslint-disable-next-line no-unused-vars
       .catch((err) => {
         setError({ ...error, login: "Envalid Email Password!"});
         toast.error("Envalid Email Password!", {
@@ -46,8 +46,8 @@ const handleSubmitGoogle =() =>{
     setUser(result.user); 
     navigate(location?.state ? location.state : "/profile");
   })
-  .catch((error) => {
-    console.error("Error during Google Sign-In:", error.message);
+  .catch((err) => {
+    setError(...error, err.message);
   });
 }
 

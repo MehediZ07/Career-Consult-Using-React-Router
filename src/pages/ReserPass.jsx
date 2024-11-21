@@ -24,7 +24,10 @@ export default function MyProfile() {
               });
           })
           .catch((error) => {
-          console.log(error)
+            toast.error("Enter valid email!", {
+              position: "top-center",
+              autoClose: 2000,
+            });
           setError(error)
           });
       };
@@ -55,6 +58,9 @@ export default function MyProfile() {
           <div className="form-control mt-6">
             <button className="btn bg-[#faa2a0] hover:bg-[#f99796] text-white rounded-none">Reset Password</button>
           </div>
+          {error && (
+            <label className="label text-xs text-red-500">Envalid</label>
+          )}
         </form>
         <p className="text-center font-semibold">
           Back to login ?{" "}

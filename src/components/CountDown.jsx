@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import Countdown from "react-countdown";
 export default function CountDown() {
@@ -7,10 +8,10 @@ export default function CountDown() {
       };
   return (
     <div className="flex justify-center  items-center">
-    {/* Adjusting padding to reduce space */}
+   
     <div className="">
     <Countdown
-        date={Date.now() + 1296000000} // 15 days from now (in milliseconds)
+        date={Date.now() + 1296000000} 
         onComplete={handleComplete}
         renderer={({ days, hours, minutes, seconds }) => (
           <div className="grid grid-flow-col gap-5 text-center auto-cols-max">

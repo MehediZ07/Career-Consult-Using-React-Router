@@ -2,7 +2,7 @@
 import React from 'react'
 // eslint-disable-next-line react/prop-types
 export default function ClientCard({single}) {
-    console.log(single)
+
     // eslint-disable-next-line react/prop-types
     const {image, name, profession, rating, location} = single;
   return (

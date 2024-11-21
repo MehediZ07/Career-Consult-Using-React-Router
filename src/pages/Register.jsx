@@ -55,12 +55,11 @@ const Register = () => {
               position: "top-center",
               autoClose: 2000,
             });
-            console.log(err);
+            setError({ ...error, err });
           });
       })
       .catch((err) => {
-        console.log(err);
-        // ..
+        setError({ ...error, err });
       });
   };
   const togglePasswordVisibility = () => {

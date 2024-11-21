@@ -4,9 +4,9 @@ import HomeLayout from "../layouts/HomeLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import FindUs from "../components/FindUs"
+
 import PrivateRoute from "./PrivateRoute";
-// import ErrorPage from "../pages/ErrorPage";
+
 import ErrorPage from '../pages/ErrorPage'
 import Home from "../pages/Home";
 import ServiceDetails from "../components/ServiceDetails";
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <h1>Error</h1>,
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

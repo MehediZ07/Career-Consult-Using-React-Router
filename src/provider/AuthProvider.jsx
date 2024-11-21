@@ -3,7 +3,7 @@ import app from "../firebase/firebase.config";
 import {
   createUserWithEmailAndPassword,
   getAuth,
-  // GoogleAuthProvider,
+
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -15,12 +15,12 @@ import {
 // eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext();
 const auth = getAuth(app);
-// const googleProvider = new GoogleAuthProvider();
+
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  // console.log(loading, user);
+ 
 
   const handleGoogleLogin = (googleProvider) => {
     setLoading(true);

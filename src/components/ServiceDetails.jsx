@@ -33,7 +33,6 @@ export default function ServiceDetails() {
     }
   };
 
-  console.log(data)
   useEffect(() => {
       fetch('/Data.json') 
           .then(response => {
@@ -46,8 +45,9 @@ export default function ServiceDetails() {
               setData(json);
               setLoading(false);
           })
+          // eslint-disable-next-line no-unused-vars
           .catch(err => {
-              console.error("Error fetching data:", err);
+             
               setLoading(false);
           });
   }, []);

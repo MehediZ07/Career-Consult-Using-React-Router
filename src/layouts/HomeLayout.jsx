@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const HomeLayout = () => {
+  // eslint-disable-next-line no-unused-vars
   const  data  = useLoaderData();
   const scrollToTopStyle = {
     backgroundColor: "#b5eade",

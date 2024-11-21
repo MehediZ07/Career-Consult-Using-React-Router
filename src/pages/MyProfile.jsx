@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext, useState } from 'react'
 import { AuthContext } from '../provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
@@ -33,7 +34,7 @@ export default function MyProfile() {
         <title>{`My Profile | Career Consult`}</title>
         <meta name="description" content="Description of your page" />
       </Helmet>
-        <div className='card bg-base-100 w-full mx-auto max-w-lg shrink-0 rounded-none p-10'>
+        <div className='card bg-base-100 w-full mx-auto max-w-lg shrink-0 p-10 border-2 border-gray-200 solid rounded-lg'>
         <div className='flex items-center gap-4 px-8'>
            <div className='w-20 h-20 rounded-full'>
            <img className='w-full h-full rounded-full' src={user?.photoURL} alt={user? user.displayName: ''} />
