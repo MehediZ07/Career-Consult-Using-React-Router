@@ -6,7 +6,7 @@ import ClientCard from './ClientCard';
 function componentName ({data}) {
   return (
     <div className="gap-2 h-auto items-center -z-10 p-2">
-      <Marquee pauseOnHover={true} speed={40} gradient={true} gradientWidth={100} className="space-x-0">
+      <Marquee pauseOnHover={true} speed={80} gradient={true} gradientWidth={100} className="space-x-0">
         {
           // eslint-disable-next-line react/prop-types
           data.map((single) => {

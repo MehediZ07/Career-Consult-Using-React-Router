@@ -67,7 +67,6 @@ export default function ServiceDetails() {
       <button
         className="navlink ml-1 bg-[#ffffffa0]"
        onClick={handleGoBack}
-
       >
         Home
       </button>

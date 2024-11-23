@@ -15,8 +15,28 @@ Career Counseling Website designed to guide users on their career paths. The goa
 7. **useEffect Hook**
 8. **CReact Router (Routing)**
 9. **Conditional Rendering**
-10. **Conditional Rendering**
-11. **Conditional Rendering**
+
+
+## List of npm packge
+
+1. **animate.css**
+2. **firebase**
+3. **moment**
+4. **react-countdown**
+5. **react-fast-marquee**
+6. **react-headroom**
+7. **react-responsive-carousel**
+8. **react-scroll-to-top**
+9. **react-toastify**
+10. **swiper**
+11. **react-icons**
+12. **recharts**
+13. **react-helmet**
+
+
+
+
+
 
 
 

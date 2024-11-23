@@ -16,7 +16,7 @@ export default function MyProfile() {
       const form = new FormData(e.target);
       const name = form.get("name");
       const photo = form.get("photo");
-      updateUserProfile({ displayName: name, photoURL: photo })
+      updateUserProfile({ displayName: name || null, photoURL: photo || null })
       .then(() => {
         toast.success(`Registration Successful!`, {
             position: "top-center",
@@ -57,7 +57,7 @@ export default function MyProfile() {
               type="text"
               placeholder="name"
               className="input input-bordered"
-              required
+              
             />
           </div>
           {error.name && (
@@ -73,7 +73,7 @@ export default function MyProfile() {
               name="photo"
               placeholder="photo-url"
               className="input input-bordered"
-              required
+              
             />
           </div>
 
